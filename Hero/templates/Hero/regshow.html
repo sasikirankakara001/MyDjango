@@ -1,0 +1,34 @@
+{% extends 'Hero/base.html' %}
+{% block content %}
+
+
+ <div class="row">
+    	<div class="col-sm-3"></div>
+    	<div class="col-sm-8">
+<!--     	{% for message in messages %}
+    {{ messages }}
+        {% endfor %} -->	
+    		<table class="table table-bordered">
+    			<tr>
+    				<th>Name</th>
+    				<th>Age</th>
+    				<th>Email</th>
+    				<th>Password</th>
+                    <!-- <th>Images</th>
+    				<th>operations</th> -->
+    			</tr>
+    			{% for i in data %}
+    			<tr>
+    				<td>{{i.name}}</td>
+    				<td>{{i.age}}</td>
+    				<td>{{i.email}}</td>
+    				<td>{{i.password}}</td>
+                    <!-- <td><img src="{{i.heroimage.url}}"></td> -->
+    				<td><a href="{% url 'edit' i.id %}"><button class="btn btn-danger">Edit</button></a></td>
+    				<td><a href="{% url 'delete' i.id %}"><button class="btn btn-warning">Delete</button></a></td>
+    			</tr>
+    			{% endfor %}
+    		</table>
+}
+
+{% endblock content %}

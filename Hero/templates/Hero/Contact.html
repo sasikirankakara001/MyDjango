@@ -1,0 +1,29 @@
+{% extends 'Hero/base.html' %}
+
+{% block content %}
+
+<div class="row">
+		<div class="col-sm-2">
+			
+		</div>
+		<div class="col-sm-8">
+			<div class="card-header text-success bg-warning">Hero Register</div>
+					
+				<form action="{% url 'Contact' %}" method="POST">
+			{% csrf_token %}
+
+			{{form.as_p}}
+			<input type="submit" name="save">
+
+
+		</form>
+		<div class="card-footer  text-success bg-warning"></div>
+		</div>
+		<div class="col-sm-2">
+			
+		</div>
+		
+	</div>
+
+{% endblock content %}
+

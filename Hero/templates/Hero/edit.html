@@ -1,0 +1,12 @@
+{% extends 'Hero/base.html' %}
+{% block content %}
+{% load static %}
+	<div>
+		<form action="{% url 'edit' data.id %}" method="POST">
+			{% csrf_token %}
+			{{form.as_p}}
+			<input type="submit" name="save">
+		</form>
+	</div>
+
+{% endblock content %}
